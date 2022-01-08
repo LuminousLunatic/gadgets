@@ -3,15 +3,15 @@ window.onload = function() {
 	var launchbutton = document.getElementById('launchbutton');
 	launchbutton.style.display = 'none';
 	launchbutton.click();
-	initColor(document.querySelector('#codeHex'))
+	initColor(document.querySelector('#codeHex'));
 }
 
 function initColor(obj) {
 	let i = Math.floor(Math.random() * 5);
-	let n=aColors[i].toString().substr(1);
-	obj.value=n;
+	let n = aColors[i].toString().substr(1);
+	obj.value = n;
 	hex2rgb(n);
-	return drawshape(aColors[i])
+	return drawshape(aColors[i]);
 }
 
 function savePic(canvasId) {
