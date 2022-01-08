@@ -126,8 +126,6 @@ h5, span, label {
 	}
 
 	input[type='radio']:after {
-
-		/*display: inline-block;*/
 		margin-left: 1em;
 		border-bottom: 2px var(--color-gray--border) solid;
 	}
