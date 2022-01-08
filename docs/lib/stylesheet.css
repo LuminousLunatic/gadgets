@@ -111,4 +111,25 @@ h5, span, label {
 }
 
 @media only screen and (min-width:375px) and (max-width:650px) {
+	input[type='radio'] {
+		appearance: auto;
+		top: 5px;
+		margin: 5px 0 10px 3.1rem;
+	}
+
+	input[type='radio']:first-of-type {
+		margin-left: 0.05rem;
+	}
+
+	input[type='radio']:last-of-type {
+		margin-left: 3.9rem;
+	}
+
+	input[type='radio']:after {
+
+		/*display: inline-block;*/
+		margin-left: 1em;
+		border-bottom: 2px var(--color-gray--border) solid;
+	}
+
 }
