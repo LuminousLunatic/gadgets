@@ -1,0 +1,96 @@
+@import url('Typekit/Ubuntu.css');
+
+:root {
+	--color-dark: #212529;
+	--color-mid: #495057;
+	--color-light: #CED4DA;
+	--color-bright: #F8F9FA;
+	--color-black: #3F3844;
+	--color-white: #FFFFFF;
+	--color-gray: #C3C3C3;
+	--color-gray--dark: #888888;
+	--color-gray--border: #EAEAEA;
+	--color-gray--background: #F7F7F7;
+	--color-magenta: #900C3F;
+	--color-red: #C70039;
+	--color-orange: #FF5733;
+	--color-yellow: #FFC300;
+	--color-green: #5AE5B8;
+	--color-chartreuse: #DAF7A6;
+	--color-blue: #00BAAD;
+	--color-purple: #581845;
+	--color-shadow: rgba(63, 56, 68, 0.0625);
+	--font-body: 'Ubuntu', sans-serif;
+	--font-mono: 'Ubuntu Mono', monospace;
+	--font-size: 16px;
+	--font-size--small: 13px;
+}
+
+body {
+	font-family: var(--font-body);
+	font-size: var(--font-size);
+	line-height: 1.2;
+}
+
+h5 {
+	font-size: var(--font-size);
+	font-weight: 700;
+}
+
+h5, small {
+	color: var(--color-gray);
+	user-select: none;
+}
+
+span {
+	font-family: var(--font-mono);
+	text-transform: uppercase;
+	margin-left: 3px;
+	user-select: none;
+}
+
+::selection {
+	color: var(--color-white);
+	background: var(--color-black);
+}
+
+.modal-header, .modal-footer {
+	text-align: center;
+	justify-content: space-around;
+}
+
+.list-group {
+	margin: 15px auto;
+}
+
+.list-group .list-group-item {
+	-webkit-transition: background-color 200ms ease;
+	-moz-transition: background-color 200ms ease;
+	-o-transition: background-color 200ms ease;
+	transition: background-color 200ms ease;
+}
+
+.list-group-item-action:focus, .list-group-item-action:hover {
+	background-color: var(--color-chartreuse);
+}
+
+.list-group .list-group-item h5 {
+	color: var(--color-dark);
+}
+
+.list-group .list-group-item p {
+	color: var(--color-bright);
+	background-color: var(--color-blue);
+	font-weight: 500;
+	border-radius: 3px;
+	font-size: 0.9rem;
+	margin: 0 -5px;
+	padding: 2px 5px;
+}
+
+.list-group .list-group-item small {
+	font-size: var(--font-size--small);
+}
+
+@media only screen and (min-width:375px) and (max-width:650px) {
+}
