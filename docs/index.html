@@ -12,9 +12,9 @@
 	<script src="assets/function.js"></script>
 	<script src="assets/jquery-3.6.0.min.js"></script>
 
-	<link rel="shortcut icon" type="image/x-icon" href="assets/icon/1f4cc-192x192.png" />
-	<link rel="icon" sizes="192x192" href="assets/icon/1f4cc-192x192.png">
-	<link rel="apple-touch-icon-precomposed" href="assets/icon/1f4cc-192x192.png">
+	<link rel="shortcut icon" type="image/x-icon" href="assets/icon/icon-192x192.png" />
+	<link rel="icon" sizes="192x192" href="assets/icon/icon-192x192.png">
+	<link rel="apple-touch-icon-precomposed" href="assets/icon/icon-192x192.png">
 
 </head>
 
@@ -27,28 +27,18 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<h5 class="modal-title" id="staticBackdropLabel">GADGETS</h5>
-						<!-- <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button> -->
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+						<button type="button" class="btn-close" disabled></button>
+						<button type="button" class="btn-close" disabled></button>
 					</div>
 					<div class="modal-body">
-						<div class="list-group">
-							<a href="solid-colored-png-generator/index.html" class="list-group-item list-group-item-action" aria-current="true" id="launchSolidColoredPNG">
-								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">Launch <u>Solid Colored PNG Generator</u></h5>
-									<!-- <small>3 days ago</small> -->
-								</div>
-								<p class="mb-1">TO-DO: add shape / replace radio button</p>
-								<small>DONE: Square/Rounded/Circle HEX</small>
-							</a>
-							<a href="case-converter/index.html" class="list-group-item list-group-item-action" aria-current="true" id="launchCaseConverter" >
-								<div class="d-flex w-100 justify-content-between">
-									<h5 class="mb-1">Launch <u>Case Converter</u><span class="badge bg-danger">empty</span></h5>
-									<!-- <small>3 days ago</small> -->
-								</div>
-								<p class="mb-1 bg-primary">TO-DO: textarea enhancement(scrollbar)</p>
-								<small>DONE: </small>
-							</a>
-							<a href="nextday-simulator/index.html" class="list-group-item list-group-item-action" id="launchNextDaySimulator" style>Launch <b>NextDay Simulator</b><span class="badge bg-info">idea</span></a>
+
+						<div class="row">
+							<a class="launch-item" href="solid-colored-png-generator/index.html">Solid Colored PNG Generator <span></span></a>
+							<a class="launch-item" href="case-converter/index.html">Case Converter <span></span></a>
+							<a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a>
 						</div>
+
 					</div>
 					<div class="modal-footer">
 						<small>Update: 2021/1/19</small>
