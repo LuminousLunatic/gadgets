@@ -56,7 +56,6 @@ span {
 	box-shadow: none !important;
 }
 
-/* 通用end */
 .modal-content {
 	border: var(--border-style);
 }
@@ -73,23 +72,28 @@ span {
 	color: var(--theme-color);
 }
 
-.modal-header button.btn-close {
+.modal-header .mock-buttons {
 	position: absolute;
-	left: .3rem;
+	left: 0;
+	top: 0.05rem;
+}
+
+.modal-header .mock-buttons button {
 	width: auto;
 	height: auto;
 	opacity: 1;
 	border-radius: 20px;
 	background: #FC605C;
+	margin-left: 0.5rem;
+	position: relative;
+	display: inline-block;
 }
 
-.modal-header button.btn-close[disabled] {
-	margin-left: 1.2rem;
+.modal-header .mock-buttons button[disabled] {
 	background-color: #FCBB40;
 }
 
-.modal-header button.btn-close[disabled]:last-child {
-	margin-left: 2.4rem;
+.modal-header .mock-buttons button[disabled]:last-child {
 	background-color: #34C648;
 }
 
