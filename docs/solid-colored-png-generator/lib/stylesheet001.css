@@ -1,35 +1,15 @@
+@charset "UTF-8";
+@import url('../assets/Typekit/proxima-soft.css');
+
 :root {
-	--color-black: #3F3844;
-	--color-white: #FFFFFF;
-	--color-gray--dark: #888888;
-	--color-gray: #C3C3C3;
-	--color-gray--border: #EAEAEA;
-	--color-gray--background: #F7F7F7;
-	--color-magenta: #900C3F;
-	--color-red: #C70039;
-	--color-orange: #FF5733;
-	--color-yellow: #FFC300;
-	--color-green: #5AE5B8;
-	--color-chartreuse: #DAF7A6;
-	--color-blue: #00BAAD;
-	--color-purple: #581845;
 	--color-shadow: rgba(63, 56, 68, 0.0625);
-	--font-body: "proxima-soft", "Proxima Soft", "Proxima Nova Soft", Helvetica, Arial, sans-serif;
 	--font-mono: "Courier", Courier, monospace;
-	--font-size: 16px;
 }
 
 * {
-	font-family: var(--font-body);
 	font-weight: 700;
 	color: var(--color-black);
 	line-height: 1.2;
-	user-select: none;
-}
-
-::selection {
-	color: var(--color-white);
-	background: var(--color-black);
 }
 
 input {
@@ -84,15 +64,6 @@ h5, span, label {
 #myCanvas {
 	width: 100%;
 	height: 100%;
-}
-
-.modal-dialog {
-	max-width: 630px;
-}
-
-.modal-header {
-	text-align: center;
-	justify-content: space-around;
 }
 
 .color-data {

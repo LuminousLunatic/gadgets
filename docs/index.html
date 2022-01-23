@@ -5,13 +5,15 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>\GADGETS/</title>
-
+	<!-- base -->
 	<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
-	<link rel="stylesheet" href="assets/Typekit/proxima-soft.css">
+	<script src="assets/jquery-3.6.0.min.js"></script>
+	<!-- custom -->
 	<link rel="stylesheet" href="assets/stylesheet.css">
 	<script src="assets/function.js"></script>
-	<script src="assets/jquery-3.6.0.min.js"></script>
-
+	<!-- lib -->
+	<link rel="stylesheet" type="text/css" href="lib/Text-Input-Effects/css/component.css" />
+	<!-- favicon -->
 	<link rel="shortcut icon" type="image/x-icon" href="assets/icon/icon-192x192.png" />
 	<link rel="icon" sizes="192x192" href="assets/icon/icon-192x192.png">
 	<link rel="apple-touch-icon-precomposed" href="assets/icon/icon-192x192.png">
@@ -20,28 +22,25 @@
 
 <body>
 	<div class="container">
-		<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#staticBackdrop" id="launchbutton">Launch</button>
-		<!-- Modal -->
-		<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+		<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal01-Menu" id="launchbutton-Menu">Launch</button>
+		<!-- Modal01: MENU -->
+		<div class="modal fade" id="modal01-Menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal01-Menu-Label" aria-hidden="true">
 			<div class="modal-dialog modal-dialog-centered">
 				<div class="modal-content">
 					<div class="modal-header">
-						<h5 class="modal-title" id="staticBackdropLabel">GADGETS</h5>
+						<h5 class="modal-title" id="modal01-Menu-Label">\GADGETS/</h5>
 						<div class="mock-buttons">
 							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-						<button type="button" class="btn-close" disabled></button>
-						<button type="button" class="btn-close" disabled></button>
+							<button type="button" class="btn-close" disabled></button>
+							<button type="button" class="btn-close" disabled></button>
 						</div>
-						
 					</div>
 					<div class="modal-body">
-
 						<div class="row">
-							<a class="launch-item" href="solid-colored-png-generator/index.html">Solid Colored PNG Generator <span></span></a>
+							<a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png">Solid Colored PNG Generator <span></span></a>
 							<a class="launch-item" href="case-converter/index.html">Case Converter <span></span></a>
 							<a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a>
 						</div>
-
 					</div>
 					<div class="modal-footer">
 						<small>Update: 2021/1/22</small>
@@ -50,9 +49,110 @@
 			</div>
 		</div>
 
+		<!-- Modal02: SolidColor -->
+		<div class="modal fade" id="modal02-png" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal02-png-Label" aria-hidden="true">
+			<div class="modal-dialog modal-dialog-centered">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="modal02-png-Label">\SolidColoredPNG/</h5>
+						<div class="mock-buttons">
+							<button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#modal01-Menu"></button>
+							<button type="button" class="btn-close" disabled></button>
+							<button type="button" class="btn-close" disabled></button>
+						</div>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="col-md-6">
+								<section class="color-data">
+									<span class="input input--yoko">
+										<input class="input__field input__field--yoko" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);hex2rgb(this.value)" onchange="drawshape('#'+this.value);hex2rgb(this.value)" id="codeHex" />
+										<label class="input__label input__label--yoko" for="codeHex">
+											<span class="input__label-content input__label-content--yoko">HEX</span>
+										</label>
+									</span>
+									<span class="input input--yoko">
+										<input class="input__field input__field--yoko" type="text" id="input-26" />
+										<label class="input__label input__label--yoko" for="input-26">
+											<span class="input__label-content input__label-content--yoko">RGB</span>
+										</label>
+									</span>
+									<span class="input input--yoko">
+										<input class="input__field input__field--yoko" type="text" id="input-27" />
+										<label class="input__label input__label--yoko" for="input-27">
+											<span class="input__label-content input__label-content--yoko">HSL</span>
+										</label>
+									</span>
+									<span class="input input--yoko">
+										<input class="input__field input__field--yoko" type="text" id="input-28" />
+										<label class="input__label input__label--yoko" for="input-28">
+											<span class="input__label-content input__label-content--yoko">FILE NAME</span>
+										</label>
+									</span>
+								</section>
+
+								<div class="row color-data align-items-end">
+									<div class="col">
+										<span class="badge rounded-pill bg-dark" id="saveImg" onclick="savePic(document.querySelector('#myCanvas'))">save</span>
+									</div>
+
+								</div>
+							</div>
+							<div class="col-md-6 order-first">
+								<canvas id="myCanvas" width="512" height="512" style="border:1px solid #eee;">
+									Your browser does not support the HTML5 canvas tag.
+								</canvas>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
 	</div>
 
 	<script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+	<script src="lib/Text-Input-Effects/js/classie.js"></script>
+	<script>
+	// canvas basic
+	var c = document.getElementById("myCanvas");
+	var ctx = c.getContext("2d");
+	// random init color
+	var aColors = ['#9FC3E9', '#709578', '#6C81B7', '#F1E7C7', '#D490BD'];
+	</script>
+	<script>
+	(function() {
+		// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+		if (!String.prototype.trim) {
+			(function() {
+				// Make sure we trim BOM and NBSP
+				var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+				String.prototype.trim = function() {
+					return this.replace(rtrim, '');
+				};
+			})();
+		}
+		[].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+			// in case the input is already filled..
+			if (inputEl.value.trim() !== '') {
+				classie.add(inputEl.parentNode, 'input--filled');
+			}
+			// events:
+			inputEl.addEventListener('focus', onInputFocus);
+			inputEl.addEventListener('blur', onInputBlur);
+		});
+
+		function onInputFocus(ev) {
+			classie.add(ev.target.parentNode, 'input--filled');
+		}
+
+		function onInputBlur(ev) {
+			if (ev.target.value.trim() === '') {
+				classie.remove(ev.target.parentNode, 'input--filled');
+			}
+		}
+	})();
+	</script>
 
 </body>
 
