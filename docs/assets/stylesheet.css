@@ -162,14 +162,11 @@ span {
 	max-width: 650px;
 }
 
-input {
+.input__field {
 	font-size: var(--font-size);
-	width: auto;
-	padding: 0 2px;
-	border: none;
-	border-bottom: 2px var(--color-gray--border) solid;
-	outline: none;
+	padding: 0.5ren;
 	caret-color: var(--color-gray);
+	outline: none;
 }
 
 input[type='radio'] {

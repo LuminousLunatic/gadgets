@@ -37,13 +37,13 @@
 					</div>
 					<div class="modal-body">
 						<div class="row">
-							<a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png">Solid Colored PNG Generator <span></span></a>
+							<a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png" id="link-to-solid">Solid Colored PNG Generator <span></span></a>
 							<a class="launch-item" href="case-converter/index.html">Case Converter <span></span></a>
 							<a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a>
 						</div>
 					</div>
 					<div class="modal-footer">
-						<small>Update: 2021/1/22</small>
+						<small>Update: 2021/1/24</small>
 					</div>
 				</div>
 			</div>
@@ -93,13 +93,13 @@
 
 								<div class="row color-data align-items-end">
 									<div class="col">
-										<span class="badge rounded-pill bg-dark" id="saveImg" onclick="savePic(document.querySelector('#myCanvas'))">save</span>
+										<span class="badge rounded-pill bg-dark" id="saveImg" onclick="savePic(document.querySelector('#pngCanvas'))">save</span>
 									</div>
 
 								</div>
 							</div>
 							<div class="col-md-6 order-first">
-								<canvas id="myCanvas" width="512" height="512" style="border:1px solid #eee;">
+								<canvas id="pngCanvas" width="512" height="512" style="border:1px solid #eee;">
 									Your browser does not support the HTML5 canvas tag.
 								</canvas>
 							</div>
@@ -115,7 +115,7 @@
 	<script src="lib/Text-Input-Effects/js/classie.js"></script>
 	<script>
 	// canvas basic
-	var c = document.getElementById("myCanvas");
+	var c = document.getElementById("pngCanvas");
 	var ctx = c.getContext("2d");
 	// random init color
 	var aColors = ['#9FC3E9', '#709578', '#6C81B7', '#F1E7C7', '#D490BD'];
