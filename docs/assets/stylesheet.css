@@ -25,6 +25,7 @@
 	--font-mono: 'Ubuntu Mono', monospace;
 	--font-size: 14px;
 	--font-size--small: 10px;
+	--font-size--extra: 18px;
 	--border-style: 3px solid #2733F1;
 	--theme-color: #2733F1;
 }
@@ -112,12 +113,24 @@ span {
 	justify-content: space-around;
 }
 
+.modal-footer {
+	padding: 0.5rem;
+}
+
+.modal-footer small {
+	font-size: 0.5rem;
+	font-weight: 300;
+}
+
 /****************************
  ********* MODAL 01 *********
  *********** MENU ***********
  ****************************/
-#modal01-Menu .modal-body {
-	padding: 3rem 8rem;
+#modal01-Menu {
+}
+
+.modal-body {
+	padding: 2rem 1rem;
 }
 
 .modal-body a.launch-item {
@@ -162,11 +175,39 @@ span {
 	max-width: 650px;
 }
 
+.input {
+	margin: 0.5rem;
+}
+
+.input:first-child {
+	margin-top: 0rem;
+}
+
+.input:last-child {
+	margin-bottom: 0rem;
+}
+
 .input__field {
-	font-size: var(--font-size);
-	padding: 0.5ren;
-	caret-color: var(--color-gray);
+	font-size: var(--font-size--extra);
+	padding: 0.1rem;
 	outline: none;
+	caret-color: var(--theme-color);
+	color: var(--theme-color);
+	line-height: 1;
+}
+
+.input__label--isao:before {
+	height: 5px;/*border-radius: 5px;*/
+}
+
+.input__field--isao:focus + .input__label--isao:before {
+	background-color: var(--theme-color);
+}
+
+.input__field--isao:focus + .input__label--isao:after {
+	color: var(--theme-color);
+	margin-top: 2px;
+	margin-left: 3px;
 }
 
 input[type='radio'] {
