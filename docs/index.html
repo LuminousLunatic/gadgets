@@ -25,137 +25,141 @@
 </head>
 
 <body>
-	<div class="container">
-		<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal01-Menu" id="launchbutton-Menu">Launch</button>
-		<!-- Modal01: MENU -->
-		<div class="modal fade" id="modal01-Menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal01-Menu-Label" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modal01-Menu-Label">\GADGETS/</h5>
-						<div class="mock-buttons">
-							<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							<button type="button" class="btn-close" disabled></button>
-							<button type="button" class="btn-close" disabled></button>
-						</div>
+<div class="container">
+	<button type="button" class="btn" data-bs-toggle="modal" data-bs-target="#modal01-Menu" id="launchbutton-Menu">Launch</button>
+
+	<!-- Modal00: MENU -->
+	<div class="modal fade" id="modal01-Menu" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal01-Menu-Label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal01-Menu-Label">\GADGETS/</h5>
+					<div class="mock-buttons">
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="boo()"></button>
+						<button type="button" class="btn-close" disabled></button>
+						<button type="button" class="btn-close" disabled></button>
 					</div>
-					<div class="modal-body">
-						<div class="row"><a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png" id="link-to-solid">Solid Colored PNG Generator <span></span></a></div>
-						<div class="row"><a class="launch-item" href="case-converter/index.html">Case Converter <span></span></a></div>
-						<div class="row"><a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a></div>
-					</div>
-					<div class="modal-footer">
-						<small>Update: 2021/1/25</small>
-					</div>
+				</div>
+				<div class="modal-body">
+					<div class="row"><a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png" id="link-to-solid">Solid Colored PNG Generator <span></span></a></div>
+					<div class="row"><a class="launch-item" href="case-converter/index.html">Case Converter <span></span></a></div>
+					<div class="row"><a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a></div>
+				</div>
+				<div class="modal-footer">
+					<small>Update: 2021/1/25</small>
 				</div>
 			</div>
 		</div>
-
-		<!-- Modal02: SolidColor -->
-		<div class="modal fade" id="modal02-png" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal02-png-Label" aria-hidden="true">
-			<div class="modal-dialog modal-dialog-centered">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title" id="modal02-png-Label">\SolidColoredPNG/</h5>
-						<div class="mock-buttons">
-							<button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#modal01-Menu"></button>
-							<button type="button" class="btn-close" disabled></button>
-							<button type="button" class="btn-close" disabled></button>
-						</div>
-					</div>
-					<div class="modal-body">
-						<div class="row">
-							<div class="col-md-6">
-								<section class="color-data">
-									<span class="input input--isao">
-										<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);hex2rgb(this.value)" onchange="drawshape('#'+this.value);hex2rgb(this.value)" id="codeHex" />
-										<label class="input__label input__label--isao" for="codeHex" data-content="HEX">
-											<span class="input__label-content input__label-content--isao">HEX</span>
-										</label>
-									</span>
-									<span class="input input--isao">
-										<input class="input__field input__field--isao" type="text" id="input-26" />
-										<label class="input__label input__label--isao" for="input-26" data-content="RGB">
-											<span class="input__label-content input__label-content--isao">RGB</span>
-										</label>
-									</span>
-									<span class="input input--isao">
-										<input class="input__field input__field--isao" type="text" id="input-27" />
-										<label class="input__label input__label--isao" for="input-27" data-content="HSL">
-											<span class="input__label-content input__label-content--isao">HSL</span>
-										</label>
-									</span>
-									<span class="input input--isao">
-										<input class="input__field input__field--isao" type="text" id="input-28" />
-										<label class="input__label input__label--isao" for="input-28" data-content="FILE NAME">
-											<span class="input__label-content input__label-content--isao">FILE NAME</span>
-										</label>
-									</span>
-								</section>
-
-								<div class="row color-data align-items-end">
-									<div class="col">
-										<span class="badge rounded-pill bg-dark" id="saveImg" onclick="savePic(document.querySelector('#pngCanvas'))">save</span>
-									</div>
-
-								</div>
-							</div>
-							<div class="col-md-6 order-first">
-								<canvas id="pngCanvas" width="512" height="512" style="border:1px solid #eee;">
-									Your browser does not support the HTML5 canvas tag.
-								</canvas>
-							</div>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-
 	</div>
 
-	<script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
-	<script src="lib/Text-Input-Effects/js/classie.js"></script>
-	<script>
-	// canvas basic
-	var c = document.getElementById("pngCanvas");
-	var ctx = c.getContext("2d");
-	// random init color
-	var aColors = ['#9FC3E9', '#709578', '#6C81B7', '#F1E7C7', '#D490BD'];
-	</script>
-	<script>
-	(function() {
-		// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
-		if (!String.prototype.trim) {
-			(function() {
-				// Make sure we trim BOM and NBSP
-				var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
-				String.prototype.trim = function() {
-					return this.replace(rtrim, '');
-				};
-			})();
-		}
-		[].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
-			// in case the input is already filled..
-			if (inputEl.value.trim() !== '') {
-				classie.add(inputEl.parentNode, 'input--filled');
-			}
-			// events:
-			inputEl.addEventListener('focus', onInputFocus);
-			inputEl.addEventListener('blur', onInputBlur);
-		});
+	<!-- Modal01: SolidColor -->
+	<div class="modal fade" id="modal02-png" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal02-png-Label" aria-hidden="true">
+		<div class="modal-dialog modal-dialog-centered">
+			<div class="modal-content">
+				<div class="modal-header">
+					<h5 class="modal-title" id="modal02-png-Label">\Solid-Colored-PNG-Generator/</h5>
+					<div class="mock-buttons">
+						<button type="button" class="btn-close" data-bs-toggle="modal" data-bs-target="#modal01-Menu"></button>
+						<button type="button" class="btn-close" disabled></button>
+						<button type="button" class="btn-close" disabled></button>
+					</div>
+				</div>
+				<div class="modal-body">
+					<div class="row">
+						<div class="col-md-6">
+							<section class="color-data">
+								<span class="input input--isao">
+									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);hex2rgb(this.value)" onchange="drawshape('#'+this.value);hex2rgb(this.value)" id="codeHex" />
+									<label class="input__label input__label--isao" for="codeHex" data-content="HEX">
+										<span class="input__label-content input__label-content--isao">HEX</span>
+									</label>
+								</span>
+								<span class="input input--isao">
+									<input class="input__field input__field--isao" type="text" id="input-26" />
+									<label class="input__label input__label--isao" for="input-26" data-content="RGB">
+										<span class="input__label-content input__label-content--isao">RGB</span>
+									</label>
+								</span>
+								<span class="input input--isao">
+									<input class="input__field input__field--isao" type="text" id="input-27" />
+									<label class="input__label input__label--isao" for="input-27" data-content="HSL">
+										<span class="input__label-content input__label-content--isao">HSL</span>
+									</label>
+								</span>
+								<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Square" checked>
+									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Rounded">
+									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Circle">
+								<span class="input input--isao">
+									<input class="input__field input__field--isao" type="text" id="input-28" />
+									<label class="input__label input__label--isao" for="input-28" data-content="FILE NAME">
+										<span class="input__label-content input__label-content--isao">FILE NAME</span>
+									</label>
+								</span>
+							</section>
 
-		function onInputFocus(ev) {
-			classie.add(ev.target.parentNode, 'input--filled');
-		}
+							<div class="row color-data align-items-end">
+								<div class="col">
+									<span class="badge rounded-pill bg-dark" id="saveImg" onclick="savePic(document.querySelector('#pngCanvas'))">save</span>
+								</div>
 
-		function onInputBlur(ev) {
-			if (ev.target.value.trim() === '') {
-				classie.remove(ev.target.parentNode, 'input--filled');
-			}
-		}
+							</div>
+						</div>
+						<div class="col-md-6 order-first">
+							<canvas id="pngCanvas" width="512" height="512" style="border:1px solid #eee;">
+								Your browser does not support the HTML5 canvas tag.
+							</canvas>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 
-	})();
-	</script>
+</div>
+
+<script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
+<script src="lib/Text-Input-Effects/js/classie.js"></script>
+<script>
+// canvas basic
+var c = document.getElementById("pngCanvas");
+var ctx = c.getContext("2d");
+// random init color
+var aColors = ['#9FC3E9', '#709578', '#6C81B7', '#F1E7C7', '#D490BD'];
+</script>
+<script>
+// 输入框插件js
+(function() {
+	// trim polyfill : https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/Trim
+	if (!String.prototype.trim) {
+		(function() {
+			// Make sure we trim BOM and NBSP
+			var rtrim = /^[\s\uFEFF\xA0]+|[\s\uFEFF\xA0]+$/g;
+			String.prototype.trim = function() {
+				return this.replace(rtrim, '');
+			};
+		})();
+	}
+	[].slice.call(document.querySelectorAll('input.input__field')).forEach(function(inputEl) {
+		// in case the input is already filled..
+		if (inputEl.value.trim() !== '') {
+			classie.add(inputEl.parentNode, 'input--filled');
+		}
+		// events:
+		inputEl.addEventListener('focus', onInputFocus);
+		inputEl.addEventListener('blur', onInputBlur);
+	});
+
+	function onInputFocus(ev) {
+		classie.add(ev.target.parentNode, 'input--filled');
+	}
+
+	function onInputBlur(ev) {
+		if (ev.target.value.trim() === '') {
+			classie.remove(ev.target.parentNode, 'input--filled');
+		}
+	}
+})();
+</script>
 
 </body>
 

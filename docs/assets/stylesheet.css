@@ -70,6 +70,7 @@ span {
 .modal-header {
 	padding: .1rem 1rem;
 	border-bottom: var(--border-style);
+	user-select: none;
 }
 
 .modal-header h5 {
@@ -123,7 +124,7 @@ span {
 }
 
 /****************************
- ********* MODAL 01 *********
+ ********* MODAL 00 *********
  *********** MENU ***********
  ****************************/
 #modal01-Menu {
@@ -142,6 +143,7 @@ span {
 	cursor: pointer;
 	text-decoration: none;
 	color: var(--theme-color);
+	user-select: none;
 }
 
 .modal-body a.launch-item:before {
