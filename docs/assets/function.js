@@ -28,9 +28,15 @@ function boo() {
  ************************/
 function resizeCanvas() {
 	let side = $('#pngCanvas').width() < $('#pngCanvas').height() ? $('#pngCanvas').width() : $('#pngCanvas').height();
+	if (side > 500) {
+		side = 500;
+	} else {
+		side = (side / 10) * 10;
+	}
 	console.log('side: ', side);
 	$('#pngCanvas').width(side);
 	$('#pngCanvas').height(side);
+	// drawBg();
 }
 
 function initColor(obj) {
@@ -43,9 +49,14 @@ function initColor(obj) {
 }
 
 function savePic(canvasId) {
-	var img_data = Canvas2Image.convertToImage(canvasId, c.width, c.height, 'png').getAttribute('src');
-	var filename = document.querySelector('#filename').value;
-	saveFile(img_data, filename + '.png');
+	if (document.getElementsByName('picShape')[3].checked) {
+		alert('Nahhhhh');
+	} else {
+		var img_data = Canvas2Image.convertToImage(canvasId, c.width, c.height, 'png').getAttribute('src');
+		var filename = document.querySelector('#filename').value;
+		saveFile(img_data, filename + '.png');
+	}
+
 };
 
 function saveFile(data, filename) {
@@ -57,9 +68,22 @@ function saveFile(data, filename) {
 	save_link.dispatchEvent(event);
 };
 
+function drawBg() {
+	var imgData = ctx.createImageData(100, 100);
+	for (var i = 0; i < imgData.data.length / 20; i++) {
+		for (var j = 0; j < imgData.data.length / 20; j++) {
+			if ((j % 2 == 0 && i % 2 == 0) || (j % 2 != 0 && i % 2 != 0)) {
+				ctx.fillStyle = "#eee";
+				ctx.fillRect(i * 20, j * 20, 20, 20);
+			}
+		}
+	}
+}
+
 function drawshape(colorValue) {
 	var shape = document.getElementsByName('picShape');
 	ctx.clearRect(0, 0, c.width, c.height);
+	ctx.globalCompositeOperation = "destination-over";
 	ctx.fillStyle = colorValue;
 	for (let j = 0; j < shape.length; j++) {
 		if (shape[j].checked) {
@@ -85,6 +109,9 @@ function drawshape(colorValue) {
 					ctx.arc(c.width / 2, c.height / 2, c.height / 2, 0, 2 * Math.PI);
 					ctx.fill();
 					break;
+				case 'WipeOut':
+					drawBg();
+					break;
 				default:
 					ctx.fillRect(0, 0, c.width, c.height);
 			}
@@ -92,7 +119,6 @@ function drawshape(colorValue) {
 	}
 
 	// hex2rgb(colorValue)
-
 }
 
 

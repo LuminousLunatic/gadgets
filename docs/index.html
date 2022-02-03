@@ -10,6 +10,11 @@
 	<link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
 	<script src="assets/jquery-3.6.0.min.js"></script>
 
+	<!-- dark mode -->
+	<meta name="color-scheme" content="light dark">
+	<link rel="stylesheet" href="assets/bootstrap-dark-5/css/bootstrap-dark.css">
+
+
 	<!-- lib -->
 	<link rel="stylesheet" type="text/css" href="lib/Text-Input-Effects/css/component.css" />
 	<script src="lib/canvas2image.js"></script>
@@ -67,7 +72,7 @@
 				</div>
 				<div class="modal-body">
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-6">
 							<section class="color-data">
 								<span class="input input--isao">
 									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);" onchange="drawshape('#'+this.value);" id="codeHex" />
@@ -90,6 +95,7 @@
 								<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Square" checked>
 									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Rounded">
 									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Circle">
+									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="WipeOut">
 								<span class="input input--isao">
 									<input class="input__field input__field--isao" type="text" id="filename" />
 									<label class="input__label input__label--isao" for="filename" data-content="FILE NAME">
@@ -105,7 +111,7 @@
 
 							</div>
 						</div>
-						<div class="col-md-6 order-first">
+						<div class="col-6 order-first">
 							<canvas id="pngCanvas" width="512" height="512" style="border:1px solid #eee;">
 								Your browser does not support the HTML5 canvas tag.
 							</canvas>

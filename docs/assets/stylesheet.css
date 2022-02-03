@@ -2,24 +2,9 @@
 @import url('type/Lato.css');
 
 :root {
+	--color-mode: "light";
 	--color-dark: #212529;
-	--color-mid: #495057;
-	--color-light: #CED4DA;
-	--color-bright: #F8F9FA;
 	--color-black: #3F3844;
-	--color-white: #FFFFFF;
-	--color-gray: #C3C3C3;
-	--color-gray--dark: #888888;
-	--color-gray--border: #EAEAEA;
-	--color-gray--background: #F7F7F7;
-	--color-magenta: #900C3F;
-	--color-red: #C70039;
-	--color-orange: #FF5733;
-	--color-yellow: #FFC300;
-	--color-green: #5AE5B8;
-	--color-chartreuse: #DAF7A6;
-	--color-blue: #00BAAD;
-	--color-purple: #581845;
 	--color-shadow: rgba(63, 56, 68, 0.0625);
 	--font-body: 'Lato', sans-serif;
 	--font-mono: 'Ubuntu Mono', monospace;
@@ -28,6 +13,18 @@
 	--font-size--extra: 18px;
 	--border-style: 3px solid #2733F1;
 	--theme-color: #2733F1;
+}
+
+@media (prefers-color-scheme:dark) {
+	:root {
+		--color-mode: "dark";
+	}
+
+	:root:not([data-user-color-scheme]) {
+		--border-style: 3px solid #89aae6;
+		--theme-color: #89aae6;
+	}
+
 }
 
 /*************************
@@ -41,7 +38,6 @@ body {
 
 small {
 	user-select: none;
-	color: var(--color-gray);
 }
 
 span {
@@ -52,8 +48,10 @@ span {
 }
 
 ::selection {
-	color: var(--color-white);
-	background: var(--color-black);
+
+	/*color: var(--color-white);*/
+
+	/*background: var(--color-black);*/
 }
 
 *:focus {
@@ -153,7 +151,7 @@ span {
 .modal-body a.launch-item span {
 	display: block;
 	width: 0;
-	height: .15rem;
+	height: .2rem;
 	margin-top: -.3rem;
 	margin-right: -.2rem;
 	margin-left: -.1rem;
@@ -161,7 +159,7 @@ span {
 	-moz-transition: all .6s ease-out;
 	-o-transition: all .6s ease-out;
 	transition: all .6s ease-out;
-	border-radius: 1rem;
+	border-radius: .1rem;
 	background-color: var(--theme-color);
 }
 
@@ -174,7 +172,8 @@ span {
  ******* SOLID COLOR ********
  ****************************/
 #modal02-png .modal-dialog {
-	max-width: 650px;
+
+	/*max-width: 650px;*/
 }
 
 .input {
@@ -256,6 +255,17 @@ input[type='radio']:checked {
 .color-code span {
 	margin-left: 5px;
 	color: var(--color-black);
+}
+
+/**
+ * 一些用来override bootstrap的
+ */
+@media (min-width:576px) {
+	.modal-dialog {
+
+		/*margin: 1.75rem auto;*/
+	}
+
 }
 
 /*************************
