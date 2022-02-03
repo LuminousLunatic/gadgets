@@ -25,6 +25,10 @@
 		--theme-color: #89aae6;
 	}
 
+	.modal-backdrop {
+		background-color: inherit;
+	}
+
 }
 
 /*************************
