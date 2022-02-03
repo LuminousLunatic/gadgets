@@ -12,6 +12,7 @@
 
 	<!-- lib -->
 	<link rel="stylesheet" type="text/css" href="lib/Text-Input-Effects/css/component.css" />
+	<script src="lib/canvas2image.js"></script>
 
 	<!-- custom -->
 	<link rel="stylesheet" href="assets/stylesheet.css">
@@ -46,7 +47,7 @@
 					<div class="row"><a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a></div>
 				</div>
 				<div class="modal-footer">
-					<small>Update: 2021/1/25</small>
+					<small>Update: 2022/2/3</small>
 				</div>
 			</div>
 		</div>
@@ -69,7 +70,7 @@
 						<div class="col-md-6">
 							<section class="color-data">
 								<span class="input input--isao">
-									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);hex2rgb(this.value)" onchange="drawshape('#'+this.value);hex2rgb(this.value)" id="codeHex" />
+									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);" onchange="drawshape('#'+this.value);" id="codeHex" />
 									<label class="input__label input__label--isao" for="codeHex" data-content="HEX">
 										<span class="input__label-content input__label-content--isao">HEX</span>
 									</label>
@@ -90,8 +91,8 @@
 									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Rounded">
 									<input type="radio" name="picShape" onclick="drawshape('#'+document.querySelector('#codeHex'))" value="Circle">
 								<span class="input input--isao">
-									<input class="input__field input__field--isao" type="text" id="input-28" />
-									<label class="input__label input__label--isao" for="input-28" data-content="FILE NAME">
+									<input class="input__field input__field--isao" type="text" id="filename" />
+									<label class="input__label input__label--isao" for="filename" data-content="FILE NAME">
 										<span class="input__label-content input__label-content--isao">FILE NAME</span>
 									</label>
 								</span>

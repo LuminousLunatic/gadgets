@@ -38,7 +38,7 @@ function initColor(obj) {
 	let n = aColors[i].toString().substr(1);
 	console.log(n);
 	obj.value = n;
-	hex2rgb(n);
+	// hex2rgb(n);
 	return drawshape(aColors[i]);
 }
 

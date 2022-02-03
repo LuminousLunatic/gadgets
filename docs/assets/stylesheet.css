@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url('Typekit/Lato.css');
+@import url('type/Lato.css');
 
 :root {
 	--color-dark: #212529;
