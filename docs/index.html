@@ -42,9 +42,10 @@
 					<h5 class="modal-title" id="modal01-Menu-Label">\GADGETS/</h5>
 					<div class="mock-buttons">
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" onclick="boo()"></button>
-						<button type="button" class="btn-close" disabled></button>
+						<button type="button" class="btn-close" id="toggle-btn2" title="" data-bs-toggle="tooltip" data-bs-placement="top" data-bs-title="Toggle Dark Mode"></button>
 						<button type="button" class="btn-close" disabled></button>
 					</div>
+
 				</div>
 				<div class="modal-body">
 					<div class="row"><a class="launch-item" data-bs-toggle="modal" data-bs-target="#modal02-png" id="link-to-solid">Solid Colored PNG Generator <span></span></a></div>
@@ -52,7 +53,7 @@
 					<div class="row"><a class="launch-item" href="nextday-simulator/index.html">NextDay Simulator <span></span></a></div>
 				</div>
 				<div class="modal-footer">
-					<small>Update: 2022/2/3</small>
+					<small>Update: 2022/2/4</small>
 				</div>
 			</div>
 		</div>
@@ -75,7 +76,7 @@
 						<div class="col-6">
 							<section class="color-data">
 								<span class="input input--isao">
-									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);" onchange="drawshape('#'+this.value);" id="codeHex" />
+									<input class="input__field input__field--isao" type="text" tabindex="1" maxlength="6" onkeyup="drawshape('#'+this.value);fileName();" onchange="drawshape('#'+this.value);fileName();" id="codeHex" />
 									<label class="input__label input__label--isao" for="codeHex" data-content="HEX">
 										<span class="input__label-content input__label-content--isao">HEX</span>
 									</label>
@@ -127,6 +128,11 @@
 <script src="assets/bootstrap/bootstrap.bundle.min.js"></script>
 <script src="lib/Text-Input-Effects/js/classie.js"></script>
 <script>
+// tooltip
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
 // canvas basic
 var c = document.getElementById("pngCanvas");
 var ctx = c.getContext("2d");

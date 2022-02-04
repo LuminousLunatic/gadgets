@@ -29,6 +29,18 @@
 		background-color: inherit;
 	}
 
+	.modal-header .mock-buttons button:first-child {
+		background: #e5847f;
+	}
+
+	.modal-header .mock-buttons button:nth-child(2) {
+		background: #f9ffc8;
+	}
+
+	.modal-header .mock-buttons button:last-child {
+		background: #95f6be;
+	}
+
 }
 
 /*************************
@@ -99,12 +111,12 @@ span {
 	background: #FC605C;
 }
 
-.modal-header .mock-buttons button[disabled] {
-	background-color: #FCBB40;
+.modal-header .mock-buttons button:nth-child(2) {
+	background: #FCBB40;
 }
 
-.modal-header .mock-buttons button[disabled]:last-child {
-	background-color: #34C648;
+.modal-header .mock-buttons button:last-child {
+	background: #34C648;
 }
 
 .modal-backdrop {

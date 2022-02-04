@@ -6,13 +6,14 @@ window.onload = function() {
 
 	// MODAL01:颜色初始化
 	initColor(document.getElementById('codeHex'));
+	fileName();
 }
 
 $(document).ready(function() {
 	$('#link-to-solid').click(function() {
 		setTimeout(function() {
 			resizeCanvas();
-		}, 300);
+		}, 200);
 	});
 });
 
@@ -121,6 +122,9 @@ function drawshape(colorValue) {
 	// hex2rgb(colorValue)
 }
 
+function fileName() {
+	$('#filename').val($('#codeHex').val());
+}
 
 function hex2rgb(hex) {
 	var reg = /^#([0-9a-fA-f]{3}|[0-9a-fA-f]{6})$/;
