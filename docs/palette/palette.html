@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<!-- saved from url=(0021)https://colorhunt.co/ -->
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<meta name="theme-color" content="#ffffff">
+
+	<title>Palettes</title>
+
+	<link rel="shortcut icon" href="https://colorhunt.co/img/colorhunt-favicon.svg?2">
+	<link rel="apple-touch-icon" sizes="192x192" href="https://colorhunt.co/img/color-hunt-icon-ios.png">
+
+	<link rel="preconnect" href="https://fonts.gstatic.com/">
+	<link href="lib/css2" rel="stylesheet">
+	<link href="lib/style.css" rel="stylesheet" media="all">
+	<script src="lib/jquery.min.js"></script>
+	<!-- <script src="lib/jquery-3.6.0.min.js"></script> -->
+	<style type="text/css">
+	@media (prefers-color-scheme: dark) {
+
+		body,
+		.header,
+		input {
+			color: rgba(209, 207, 204, 0.9);
+			background-color: #161718;
+			transition: all .5s;
+		}
+
+		a {
+			color: rgba(209, 207, 204, 0.9);
+		}
+
+		.button {
+			background: transparent;
+		}
+
+		.button:hover {
+			color: rgba(209, 207, 204, 1);
+		}
+
+		.button[status="on"] {
+			background-image: linear-gradient(90deg, rgb(27, 30, 31) 0%, rgb(30, 32, 33) 100%);
+			color: rgb(209, 207, 204);
+		}
+
+	}
+
+	body,
+	.header {
+		transition: all .5s;
+	}
+
+	/*555555*/
+.item5 .c0 {
+	padding-bottom: 20%;
+	animation-duration: 1s;
+	border-radius: 0;
+	border-radius: 10px 10px 0 0;
+}
+
+.item5 .c1 {
+	padding-bottom: 40%;
+	animation-duration: .6s;
+}
+
+.item5 .c2 {
+	padding-bottom: 60%;
+	animation-duration: .4s;
+}
+
+.item5 .c3 {
+	padding-bottom: 80%;
+	animation-duration: .2s;
+}.item5 .c4 {
+	padding-bottom: 100%;
+	animation-duration: 0s;
+	border-radius: 20px 20px 0 0;
+}
+
+	#_copy {
+		align-items: center;
+		background: #4494d5;
+		border-radius: 3px;
+		color: #fff;
+		cursor: pointer;
+		display: flex;
+		font-size: 13px;
+		height: 30px;
+		justify-content: center;
+		position: absolute;
+		width: 60px;
+		z-index: 1000
+	}
+
+	#select-tooltip,
+	#sfModal,
+	.modal-backdrop,
+	div[id^=reader-helper] {
+		display: none !important
+	}
+
+	.modal-open {
+		overflow: auto !important
+	}
+
+	._sf_adjust_body {
+		padding-right: 0 !important
+	}
+
+	.super_copy_btns_div {
+		position: fixed;
+		width: 154px;
+		left: 10px;
+		top: 45%;
+		background: #e7f1ff;
+		border: 2px solid #4595d5;
+		font-weight: 600;
+		border-radius: 2px;
+		font-family: -apple-system, BlinkMacSystemFont, Segoe UI, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Helvetica Neue, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol;
+		z-index: 5000
+	}
+
+	.super_copy_btns_logo {
+		width: 100%;
+		background: #4595d5;
+		text-align: center;
+		font-size: 12px;
+		color: #e7f1ff;
+		line-height: 30px;
+		height: 30px
+	}
+
+	.super_copy_btns_btn {
+		display: block;
+		width: 128px;
+		height: 28px;
+		background: #7f5711;
+		border-radius: 4px;
+		color: #fff;
+		font-size: 12px;
+		border: 0;
+		outline: 0;
+		margin: 8px auto;
+		font-weight: 700;
+		cursor: pointer;
+		opacity: .9
+	}
+
+	.super_copy_btns_btn:hover {
+		opacity: .8
+	}
+
+	.super_copy_btns_btn:active {
+		opacity: 1
+	}
+	</style>
+
+	<script src="lib/monetization.js"></script>
+</head>
+
+<body>
+	<script>
+	(function(i, s, o, g, r, a, m) {
+		i['GoogleAnalyticsObject'] = r;
+		i[r] = i[r] || function() {
+			(i[r].q = i[r].q || []).push(arguments)
+		}, i[r].l = 1 * new Date();
+		a = s.createElement(o),
+			m = s.getElementsByTagName(o)[0];
+		a.async = 1;
+		a.src = g;
+		m.parentNode.insertBefore(a, m)
+	})(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+	ga('create', 'UA-37341238-3', 'auto');
+	ga('send', 'pageview');
+	</script>
+	<script>
+	function getFeed() {}
+
+	function getLikes() {
+		myCollection = [];
+		if (localStorage.getItem("myCollection") != null && localStorage.getItem("myCollection") != "") {
+			myCollection = localStorage.getItem("myCollection").split(",");
+		}
+		itemIndex = 0;
+		myCollection.forEach(function(code) {
+			placeItem('likesList', code);
+			$('.right .likes').show();
+		});
+	}
+
+	function placeItem(place, code, likes, date) {
+		item = $('.main .item.hide').clone().removeClass('hide')
+			.attr('data-index', itemIndex).attr('data-code', code)
+			.css('animation-delay', itemIndex * 30 + "ms");
+		paintPalette(item, code);
+		item.find('.palette a').attr('href', '/palette/' + code);
+		item.find('.like').attr('onclick', 'like("' + code + '")');
+		if (myCollection.indexOf(code) != -1) {
+			item.find('.like').attr('status', 'on');
+		}
+		item.find('.like span').text(likes);
+		item.find('.date').text(date);
+		if (place == "likesList") {
+			item = item.find('.palette').attr('data-code', code);
+			item.find('span').remove();
+			item.append('<div class="x" onclick="like(\'' + code + '\')\">✕</div>');
+			$('.likesList').prepend(item);
+		} else {
+			item.appendTo('.' + place);
+		}
+		itemIndex++;
+	}
+
+	function paintPalette(obj, code) {
+		i = 0;
+		while (i < 4) {
+			hex = code.substring(i * 6, i * 6 + 6);
+			obj.find('.c' + i).css('background-color', '#' + hex).find('span').text('#' + hex.toUpperCase()).attr('data-copy', '#' + hex.toUpperCase());
+			i++;
+		}
+	}
+	$(document).ready(function() {
+		page = "";
+		sort = "";
+		tags = "";
+		tagString = "";
+		single = "";
+		step = 0;
+		oktoload = "yes";
+		filterRedirect = true;
+		carbonRendered = false;
+		if (page == "") { page = 'palettes'; }
+		if (page == "palettes" && sort == "" && tags == "") { sort = "new"; }
+		if (sort != "" && single == "") { $('.tab[tab=' + sort + ']').attr('status', 'on'); }
+		if (sort == 'popular') { $('.timeframe').css('display', 'flex'); }
+		if (page == 'palettes') {
+			if (single != '') { getSingle(); } else { getFeed(); }
+			getLikes();
+		} else {
+			if (page != 'collection') { $('.main .left').hide(); }
+			$('.main .right').hide();
+		}
+		if (tagString != "") {
+			tagString = tagString.split('-');
+			tagString.forEach(function(tag) { applyTag(tag); })
+			$('.tab[tab=' + tags + ']').attr('status', 'on');
+		}
+		$('.tab[tab=' + page + ']').attr('status', 'on');
+		window.addEventListener('scroll', function scrolling() {
+			if (page == "palettes" && oktoload == "yes" && $(document).scrollTop() + $(window).height() >= $("body").height() - 300) {
+				step++;
+				getFeed();
+				oktoload = "no";
+				setTimeout(function() { oktoload = "yes" }, 500);
+			}
+		});
+		$(window).click(function(event) {
+			if (!$(event.target).closest(".filterContainer").length) {
+				$('.filterWindow').addClass('hidden');
+			}
+			if (!$(event.target).closest(".kebab").length) {
+				$('.littleMenu').addClass('hidden');
+				$('.kebab').attr('status', 'off');
+			}
+		});
+		$('.tab').click(function() {
+			$('.tab').attr('status', 'off')
+			$(this).attr('status', 'on')
+			$('.timeframe').hide();
+			if ($(this).attr('tab') == 'popular') {
+				$('.timeframe').css('display', 'flex');
+			}
+			$('.loader').show();
+		});
+		$('.filterContainer input').keydown(function(e) {
+			if (e.keyCode == 13 && query != "") {
+				ga('send', 'event', 'search_query', query);
+			}
+			if (e.keyCode == 8 && query == "") {
+				$('.inputContainer .tag').last().click();
+			}
+		});
+		$('.filterContainer input').focus(function(e) {
+			showTags();
+			$('.filterWindow').removeClass('hidden');
+		});
+		$('.kebab').click(function(e) {
+			if ($('.littleMenu.hidden').length == 1) {
+				$('.kebab').attr('status', 'on');
+				$('.littleMenu').removeClass('hidden');
+			} else {
+				$('.kebab').attr('status', 'off');
+				$('.littleMenu').addClass('hidden');
+			}
+		});
+		if ('serviceWorker' in navigator) {
+			navigator.serviceWorker.register('/service-worker.js', {
+				scope: '.' // <--- THIS BIT IS REQUIRED
+			}).then(function(registration) {
+				// Registration was successful
+			}, function(err) {
+				// registration failed :(
+			});
+		}
+	});
+	</script>
+	<div class="header">
+		<div class="wrap flex">
+			<div class="left">
+				<a href="" class="logo flex" one-link-mark="yes">
+					<img class="tongue" src="lib/color-hunt-logo-tongue.svg">
+					<img src="lib/color-hunt-logo-face.svg">
+					<span class="mobileHide">Color Hunt</span>
+				</a>
+			</div>
+			<div class="middle filterContainer"></div>
+			<div class="right flex"></div>
+		</div>
+		<div class="line bottom"></div>
+	</div>
+	<div class="loader" style="display: none;">
+		<div class="a"></div>
+		<div class="b"></div>
+	</div>
+
+	<div class="wrap main flex">
+		<div class="left">
+			<a href="https://colorhunt.co/" class="tab button" tab="new" status="on" one-link-mark="yes">
+				<div class="icon" icon="new"></div>New
+			</a>
+			<a href="https://colorhunt.co/popular" class="tab button" tab="popular" one-link-mark="yes">
+				<div class="icon" icon="popular"></div>Popular
+			</a>
+			<div class="timeframe hide">
+				<div class="button small" timeframe="30" onclick="changeTimeframe(this)" status="on">Month</div>
+				<div class="button small" timeframe="365" onclick="changeTimeframe(this)">Year</div>
+				<div class="button small" timeframe="4000" onclick="changeTimeframe(this)">All time</div>
+			</div>
+			<a href="https://colorhunt.co/random" class="tab button" tab="random" one-link-mark="yes">
+				<div class="icon" icon="random"></div>Random
+			</a>
+			<a href="https://colorhunt.co/collection" class="tab button" tab="collection" one-link-mark="yes">
+				<div class="icon" icon="like"></div>Collection
+			</a>
+			<div class="line"></div>
+			<div class="tags">
+				<a href="https://colorhunt.co/palettes/pastel" class="tab button small tag" tab="pastel" one-link-mark="yes">Pastel</a>
+				<a href="https://colorhunt.co/palettes/neon" class="tab button small tag" tab="neon" one-link-mark="yes">Neon</a>
+				<a href="https://colorhunt.co/palettes/gold" class="tab button small tag" tab="gold" one-link-mark="yes">Gold</a>
+				<a href="https://colorhunt.co/palettes/vintage" class="tab button small tag" tab="vintage" one-link-mark="yes">Vintage</a>
+				<a href="https://colorhunt.co/palettes/retro" class="tab button small tag" tab="retro" one-link-mark="yes">Retro</a>
+				<a href="https://colorhunt.co/palettes/light" class="tab button small tag" tab="light" one-link-mark="yes">Light</a>
+				<a href="https://colorhunt.co/palettes/dark" class="tab button small tag" tab="dark" one-link-mark="yes">Dark</a>
+				<a href="https://colorhunt.co/palettes/night" class="tab button small tag" tab="night" one-link-mark="yes">Night</a>
+				<a href="https://colorhunt.co/palettes/space" class="tab button small tag" tab="space" one-link-mark="yes">Space</a>
+				<a href="https://colorhunt.co/palettes/earth" class="tab button small tag" tab="earth" one-link-mark="yes">Earth</a>
+				<a href="https://colorhunt.co/palettes/sunset" class="tab button small tag" tab="sunset" one-link-mark="yes">Sunset</a>
+			</div>
+		</div>
+		<div class="page">
+			<div class="feed global">
+				<div class="item hide">
+					<div class="palette">
+						<div class="place c3"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c2"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c1"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c0"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+					</div>
+				</div>
+				<div class="item5 hide">
+					<div class="palette">
+						<div class="place c4"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c3"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c2"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c1"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+						<div class="place c0"><a one-link-mark="yes"></a><span onclick="copy(this)"></span></div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div class="right">
+			<div class="meta">
+				<h1>Color Palettes for Designers and Artists</h1>
+				<h2>Discover the newest hand-picked palettes of Color Hunt</h2>
+				<div class="line"></div>
+			</div>
+
+		</div>
+	</div>
+
+	<script>
+	$.ajax({
+		url: "lib/data.json",
+		type: "GET",
+		dataType: "json",
+		success: function(data) {
+			var pageData = data;
+			// console.log(data.length);
+			for (let i = 0; i < data.length; i++) {
+				console.log(pageData[i].c.length);
+				let item = pageData[i].c.length < 5 ? $('.main .item.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms") : $('.main .item5.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms");
+				for (let j = 0; j < pageData[i].c.length; j++) {
+					hex = pageData[i].c[j];
+					console.log(hex);
+					item.find('.c' + j).css('background-color', '#' + hex).find('span').text('#' + hex.toUpperCase()).attr('data-copy', '#' + hex.toUpperCase());
+				}
+				item.appendTo('.main .feed')
+				// console.log(item.html());
+			}
+		}
+	})
+	</script>
+	<script>
+	function copy(obj, url) {
+		input = document.createElement('input');
+		if (url) {
+			input.setAttribute('value', document.URL);
+			ga('send', 'event', 'interaction', 'copy_link');
+		} else {
+			ga('send', 'event', 'interaction', 'copy');
+			input.setAttribute('value', $(obj).attr('data-copy').replace('#', ''));
+		}
+		document.body.appendChild(input);
+		input.select();
+		result = document.execCommand('copy');
+		document.body.removeChild(input)
+		setTimeout(function() { $('.copied').remove(); }, 1000);
+		$(obj).append("<div class='copied'>Copied</div>");
+	}
+
+	function formatThousands(n, dp) {
+		var s = '' + (Math.floor(n)),
+			d = n % 1,
+			i = s.length,
+			r = '';
+		while ((i -= 3) > 0) { r = ',' + s.substr(i, 3) + r; }
+		return s.substr(0, i + 3) + r + (d ? '.' + Math.round(d * Math.pow(10, dp || 2)) : '');
+	}
+	</script>
+</body>
+
+</html>
