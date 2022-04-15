@@ -390,13 +390,12 @@
 		type: "GET",
 		dataType: "json",
 		success: function(data) {
-			var pageData = data;
 			// console.log(data.length);
 			for (let i = 0; i < data.length; i++) {
-				console.log(pageData[i].c.length);
-				let item = pageData[i].c.length < 5 ? $('.main .item.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms") : $('.main .item5.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms");
-				for (let j = 0; j < pageData[i].c.length; j++) {
-					hex = pageData[i].c[j];
+				console.log(data[i].c.length);
+				let item = data[i].c.length < 5 ? $('.main .item.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms") : $('.main .item5.hide').clone().removeClass('hide').attr('data-index', i).css('animation-delay', i * 30 + "ms");
+				for (let j = 0; j < data[i].c.length; j++) {
+					hex = data[i].c[j];
 					console.log(hex);
 					item.find('.c' + j).css('background-color', '#' + hex).find('span').text('#' + hex.toUpperCase()).attr('data-copy', '#' + hex.toUpperCase());
 				}
